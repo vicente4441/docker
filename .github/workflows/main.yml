@@ -19,6 +19,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build the Docker image
-        run: docker build  --platform linux --tag ${{ secrets.DOCKERHUB_USERNAME }}/projectfrontend:latest -f Dockerfile ./frontend
+        run: docker build  --platform linux --tag ${{ secrets.DOCKERHUB_USERNAME }}/projectfrontend:latest -f ./frontend/Dockerfile ./frontend
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/projectfrontend:latest
